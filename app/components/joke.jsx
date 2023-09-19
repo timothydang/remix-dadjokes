@@ -6,6 +6,7 @@ export function JokeDisplay({ canDelete = true, isOwner, joke }) {
       <p>Here's your hilarious joke:</p>
       <p>{joke.content}</p>
       <Link to=".">"{joke.name}" Permalink</Link>
+
       {isOwner ? (
         <Form method="post">
           <button
@@ -18,7 +19,7 @@ export function JokeDisplay({ canDelete = true, isOwner, joke }) {
             Delete
           </button>
         </Form>
-      ) : null}
+      ) : <></>}
     </div>
   );
 }
