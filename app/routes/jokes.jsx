@@ -5,6 +5,7 @@ import { db } from "~/utils/db.server";
 import { getUser } from "~/utils/session.server";
 import { css } from "styled-system/css";
 import { Button } from "~/components/ui/button";
+import { container } from "styled-system/patterns";
 
 export const links = () => [{ rel: "stylesheet", href: stylesUrl }];
 
@@ -38,15 +39,39 @@ export default function JokesRoute() {
           borderBottomColor: "var(--color-border)",
         })}
       >
-        <div className="container">
-          <h1 className="home-link">
-            <Link to="/" title="Remix Jokes" aria-label="Remix Jokes">
-              <span className="logo">🤪</span>
-              <span className="logo-medium">J🤪KES</span>
+        <div
+          className={container({
+            justifyContent: "space-between",
+            alignItems: "center",
+          })}
+        >
+          <h1 className={css({
+            fontSize: '5xl'
+          })}>
+            <Link to="/" title="Remix Jokes" aria-label="Remix Jokes" className={css({
+              color: 'var(--color-foreground);',
+              _hover: {
+                textDecoration: 'none'
+              }
+            })}>
+              <span className={css({ display: { base: "block", md: "none" } })}>🤪</span>
+              <span
+                className={css({ display: { base: "none", md: "block" } })}
+              >
+                J🤪KES
+              </span>
             </Link>
           </h1>
+
           {data.user ? (
-            <div className="user-info">
+            <div
+              className={css({
+                display: "flex",
+                gap: "1rem",
+                alignItems: "center",
+                whiteSpace: "nowrap",
+              })}
+            >
               <span>{`Hi ${data.user.username}`}</span>
               <form action="/logout" method="post">
                 <button type="submit" className="button">
@@ -59,10 +84,11 @@ export default function JokesRoute() {
           )}
         </div>
       </header>
+
       <main
         className={css({
-          pt: "2",
-          pb: "2",
+          pt: { base: "8", md: "12" },
+          pb: { base: "8", md: "12" },
           flex: "1 1 100%",
         })}
       >
@@ -101,10 +127,11 @@ export default function JokesRoute() {
         className={css({
           pt: "8",
           pb: "4",
+          borderTop: "1px solid",
           borderTopColor: "var(--color-border)",
         })}
       >
-        <div className="container">
+        <div className={container()}>
           <Link reloadDocument to="/jokes.rss">
             RSS
           </Link>

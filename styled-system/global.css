@@ -34,16 +34,13 @@
     --scale-y: 1
     }
 
-  html, body {
-    color: var(--colors-gray-900);
-    line-height: 1.5;
-    padding: var(--spacing-0);
-    margin: var(--spacing-0)
-    }
-
   body {
     background-repeat: no-repeat;
     background-image: var(--gradient-background)
+    }
+
+  a {
+    color: var(--color-links)
     }
 
   html {

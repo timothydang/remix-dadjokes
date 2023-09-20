@@ -51,12 +51,6 @@ body {
   outline: auto;
 }
 
-:focus {
-  outline: var(--color-links) solid 2px;
-  outline-offset: 2px;
-}
-
-
 h1,
 h2,
 h3,
@@ -65,16 +59,6 @@ h5,
 h6 {
   font-family: var(--font-display);
   margin: 0;
-}
-
-a {
-  color: var(--color-links);
-  text-decoration: none;
-}
-
-a:hover {
-  color: var(--color-links-hover);
-  text-decoration: underline;
 }
 
 .sr-only {

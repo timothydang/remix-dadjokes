@@ -15,6 +15,7 @@ import { createUserSession, login, register } from "~/utils/session.server";
 
 import FormInput from "~/components/formInput";
 import SubmitButton from "~/components/submitButton";
+import { container } from "styled-system/patterns";
 
 export const links = () => [{ rel: "stylesheet", href: stylesUrl }];
 
@@ -117,7 +118,7 @@ export default function Login() {
   const { fieldErrors } = useFormContext("loginForm");
 
   return (
-    <div className="container">
+    <div className={container()}>
       <div className="content" data-light="">
         <h1>Login</h1>
         <ValidatedForm validator={validator} method="post" id="loginForm">

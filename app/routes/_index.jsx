@@ -32,11 +32,11 @@ export default function IndexRoute() {
         <h1
           className={css({
             margin: 0,
-            textShadow: "0 3px 0 rgba(0, 0, 0, 0.75);",
+            textShadow: "0 3px 0 rgba(0, 0, 0, 0.75)",
             textAlign: "center",
-            fontSize: '6xl',
+            fontSize: "6xl",
             lineHeight: "0.5",
-            fontWeight: 'bold'
+            fontWeight: "bold",
           })}
         >
           Remix{" "}
@@ -67,20 +67,16 @@ export default function IndexRoute() {
             })}
           >
             <li>
-              <Link
-                to="jokes"
-                className={css({
-                  _hover: {
-                    textDecorationStyle: "wavy",
-                    textDecorationThickness: "1px",
-                  },
-                })}
-              >
+              <Link to="jokes" className={css({ textStyle: "wavyLinks" })}>
                 Read Jokes
               </Link>
             </li>
             <li>
-              <Link reloadDocument to="/jokes.rss">
+              <Link
+                reloadDocument
+                to="/jokes.rss"
+                className={css({ textStyle: "wavyLinks" })}
+              >
                 RSS
               </Link>
             </li>

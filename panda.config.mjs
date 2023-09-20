@@ -1,5 +1,6 @@
 import { defineConfig } from "@pandacss/dev";
 import globalStyles from "app/styles/globalStyles";
+import textStyles from "app/styles/textStyles";
 
 export default defineConfig({
   globalCss: globalStyles,
@@ -23,6 +24,7 @@ export default defineConfig({
   // Useful for theme customization
   theme: {
     extend: {
+      textStyles,
       tokens: {
         colors: {
           grayPalette: {
