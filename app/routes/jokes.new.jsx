@@ -12,15 +12,16 @@ import { withZod } from "@remix-validated-form/with-zod";
 import {
   ValidatedForm,
   validationError,
-  useIsSubmitting,
-  useField,
   useIsValid,
 } from "remix-validated-form";
 
-import { JokeDisplay } from "~/components/joke";
 import { db } from "~/utils/db.server";
 import { badRequest } from "~/utils/request.server";
 import { getUserId, requireUserId } from "~/utils/session.server";
+
+import FormInput from "~/components/formInput";
+import SubmitButton from "~/components/submitButton";
+import { JokeDisplay } from "~/components/joke";
 
 const formSchema = z.object({
   content: z
@@ -33,7 +34,7 @@ const formSchema = z.object({
     .min(3, { message: "That joke's name is too short" }),
 });
 
-export const validator = withZod(formSchema);
+const validator = withZod(formSchema);
 
 export const loader = async ({ request }) => {
   const userId = await getUserId(request);
@@ -62,38 +63,6 @@ export function ErrorBoundary() {
     </div>
   );
 }
-
-export const FormInput = ({ name, label, ...rest }) => {
-  const { error, getInputProps } = useField(name);
-  return (
-    <div>
-      <label htmlFor={name}>
-        {label}{" "}
-        <input
-          {...getInputProps({ id: name })}
-          aria-invalid={!!error}
-          aria-errormessage={error ? `${name}-error` : undefined}
-          {...rest}
-        />
-      </label>
-
-      {error && (
-        <p className="form-validation-error" id={`${name}-error`} role="alert">
-          {error}
-        </p>
-      )}
-    </div>
-  );
-};
-
-export const SubmitButton = () => {
-  const isSubmitting = useIsSubmitting();
-  return (
-    <button type="submit" disabled={isSubmitting} className="button">
-      {isSubmitting ? "Submitting..." : "Submit"}
-    </button>
-  );
-};
 
 export const action = async ({ request }) => {
   const userId = await requireUserId(request);

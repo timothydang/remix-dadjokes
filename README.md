@@ -1,14 +1,12 @@
 # Dad jokes reimagined in Remix
 
-A classic dad jokes website built from Remix's [Jokes App Tutorial](https://remix.run/docs/en/main/tutorials/jokes). However, there are a few changes that were introduced to tailor it to my workflow.
+A classic dad jokes website built from Remix's [Jokes App Tutorial](https://remix.run/docs/en/main/tutorials/jokes). However, there are a few changes that were introduced to fit it better to my development workflow.
 
 - [x] Javascript instead of TS
 - [x] ESLint / Pretter for linting & formatting
 - [x] [Prisma](https://www.prisma.io/docs) ORM with a SQLite database
 - [x] [Zod](https://github.com/colinhacks/zod) for form validation with [Remix Validated Form](https://www.remix-validated-form.io/)
-- [ ] [Clerk]() for user authentication & session management
-- [ ] [Panda-css] for CSS-in-JS
-- [ ] [Vercel] for deployment
+- [x] [Panda-css] for CSS-in-JS styling & theming engine
 
 See [Remix Docs](https://remix.run/docs) for the official documentation from Remix team.
 
