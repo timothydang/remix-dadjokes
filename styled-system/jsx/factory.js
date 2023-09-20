@@ -37,7 +37,8 @@ function cvaClass() {
     })
   })
 
-  StyledComponent.displayName = `styled.${Dynamic}`
+  const name = (typeof Dynamic === 'string' ? Dynamic : Dynamic.displayName || Dynamic.name) || 'Component'
+  StyledComponent.displayName = `styled.${name}`
   return StyledComponent
 }
 

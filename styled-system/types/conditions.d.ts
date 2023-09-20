@@ -13,7 +13,7 @@ export type Conditions = {
 	/** `&:is(:read-only, [data-read-only])` */"_readOnly": string
 	/** `&:read-write` */"_readWrite": string
 	/** `&:is(:empty, [data-empty])` */"_empty": string
-	/** `&:is(:checked, [data-checked], [aria-checked=true], [data-state="checked"])` */"_checked": string
+	/** `&:is(:checked, [data-checked], [aria-checked=true], [data-state=checked])` */"_checked": string
 	/** `&:enabled` */"_enabled": string
 	/** `&:is([aria-expanded=true], [data-expanded], [data-state="expanded"])` */"_expanded": string
 	/** `&[data-highlighted]` */"_highlighted": string
@@ -52,7 +52,7 @@ export type Conditions = {
 	/** `.group:is(:checked, [data-checked], [aria-checked=true], [data-state="checked"]) &` */"_groupChecked": string
 	/** `.group:is([aria-expanded=true], [data-expanded], [data-state="expanded"]) &` */"_groupExpanded": string
 	/** `.group:invalid &` */"_groupInvalid": string
-	/** `&:is(:indeterminate, [data-indeterminate], [aria-checked=mixed], [data-state="indeterminate")` */"_indeterminate": string
+	/** `&:is(:indeterminate, [data-indeterminate], [aria-checked=mixed], [data-state=indeterminate])` */"_indeterminate": string
 	/** `&:required` */"_required": string
 	/** `&:is(:valid, [data-valid])` */"_valid": string
 	/** `&:is(:invalid, [data-invalid])` */"_invalid": string
@@ -60,12 +60,12 @@ export type Conditions = {
 	/** `&:in-range` */"_inRange": string
 	/** `&:out-of-range` */"_outOfRange": string
 	/** `&::placeholder` */"_placeholder": string
-	/** `&:placeholder-shown` */"_placeholderShown": string
+	/** `&:is(:placeholder-shown, [data-placeholder-shown])` */"_placeholderShown": string
 	/** `&:is([aria-pressed=true], [data-pressed])` */"_pressed": string
 	/** `&:is([aria-selected=true], [data-selected])` */"_selected": string
 	/** `&:default` */"_default": string
 	/** `&:optional` */"_optional": string
-	/** `&:is([open], [data-open], [data-state="open"])` */"_open": string
+	/** `&:is([open], [data-state=open])` */"_open": string
 	/** `&:fullscreen` */"_fullscreen": string
 	/** `&:is([data-loading], [aria-busy=true])` */"_loading": string
 	/** `&[aria-current=page]` */"_currentPage": string
@@ -89,6 +89,10 @@ export type Conditions = {
 	/** `&::-webkit-scrollbar-track` */"_scrollbarTrack": string
 	/** `&[data-orientation=horizontal]` */"_horizontal": string
 	/** `&[data-orientation=vertical]` */"_vertical": string
+	/** `&:is([data-state=closed])` */"_closed": string
+	/** `&:is([hidden])` */"_hidden": string
+	/** `&:is([data-current])` */"_current": string
+	/** `&:is([data-today])` */"_today": string
 	/** `@media screen and (min-width: 40em)` */"sm": string
 	/** `@media screen and (min-width: 40em) and (max-width: 47.996875em)` */"smOnly": string
 	/** `@media screen and (max-width: 40em)` */"smDown": string

@@ -1,22 +1,41 @@
 import { useField } from "remix-validated-form";
+import { Label } from "~/components/ui/label";
+import { Input } from "~/components/ui/input";
+import { css } from "styled-system/css";
 
 const FormInput = ({ name, label, ...rest }) => {
   const { error, getInputProps } = useField(name);
+  const errorProps = error
+    ? {
+        "data-invalid": true,
+        "aria-invalid": true,
+        "aria-errormessage": `${name}-error`,
+      }
+    : {};
 
   return (
     <div>
-      <label htmlFor={name}>
-        {label}{" "}
-        <input
-          {...getInputProps()}
-          aria-invalid={!!error}
-          aria-errormessage={error ? `${name}-error` : undefined}
-          {...rest}
-        />
-      </label>
+      <Label htmlFor={name}>{label}</Label>
+      <Input
+        {...getInputProps()}
+        {...errorProps}
+        {...rest}
+        className={css({
+          _invalid: {
+            borderColor: "rose.500",
+          },
+        })}
+      />
 
       {error && (
-        <p className="form-validation-error" id={`${name}-error`} role="alert">
+        <p
+          className={css({
+            mt: "1",
+            color: "rose.500",
+          })}
+          id={`${name}-error`}
+          role="alert"
+        >
           {error}
         </p>
       )}

@@ -3,6 +3,8 @@ import { json } from "@remix-run/node";
 import stylesUrl from "~/styles/jokes.css";
 import { db } from "~/utils/db.server";
 import { getUser } from "~/utils/session.server";
+import { css } from "styled-system/css";
+import { Button } from "~/components/ui/button";
 
 export const links = () => [{ rel: "stylesheet", href: stylesUrl }];
 
@@ -21,8 +23,21 @@ export default function JokesRoute() {
   const data = useLoaderData();
 
   return (
-    <div className="jokes-layout">
-      <header className="jokes-header">
+    <div
+      className={css({
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "inherit",
+      })}
+    >
+      <header
+        className={css({
+          pt: "4",
+          pb: "4",
+          borderBottom: "1px solid",
+          borderBottomColor: "var(--color-border)",
+        })}
+      >
         <div className="container">
           <h1 className="home-link">
             <Link to="/" title="Remix Jokes" aria-label="Remix Jokes">
@@ -44,9 +59,24 @@ export default function JokesRoute() {
           )}
         </div>
       </header>
-      <main className="jokes-main">
-        <div className="container">
-          <div className="jokes-list">
+      <main
+        className={css({
+          pt: "2",
+          pb: "2",
+          flex: "1 1 100%",
+        })}
+      >
+        <div
+          className={css({
+            display: "flex",
+            gap: "1rem",
+          })}
+        >
+          <div
+            className={css({
+              maxW: "48",
+            })}
+          >
             <Link to=".">Get a random joke</Link>
             <p>Here are a few more jokes to check out:</p>
             <ul>
@@ -58,16 +88,22 @@ export default function JokesRoute() {
                 </li>
               ))}
             </ul>
-            <Link to="new" className="button">
-              Add your own
+            <Link to="new">
+              <Button>Add your own</Button>
             </Link>
           </div>
-          <div className="jokes-outlet">
+          <div className={css({ flex: 1 })}>
             <Outlet />
           </div>
         </div>
       </main>
-      <footer className="jokes-footer">
+      <footer
+        className={css({
+          pt: "8",
+          pb: "4",
+          borderTopColor: "var(--color-border)",
+        })}
+      >
         <div className="container">
           <Link reloadDocument to="/jokes.rss">
             RSS

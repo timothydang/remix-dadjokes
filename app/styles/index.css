@@ -1,13 +1,7 @@
-/*
- * when the user visits this page, this style will apply, when they leave, it
- * will get unloaded, so don't worry so much about conflicting styles between
- * pages!
- */
-
 body {
   background-image: var(--gradient-background);
 }
-
+/*
 .container {
   min-height: inherit;
 }
@@ -73,4 +67,4 @@ nav ul a:hover {
   h1 span {
     font-size: 8rem;
   }
-}
+} */

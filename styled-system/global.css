@@ -33,4 +33,35 @@
     --scale-x: 1;
     --scale-y: 1
     }
+
+  html, body {
+    color: var(--colors-gray-900);
+    line-height: 1.5;
+    padding: var(--spacing-0);
+    margin: var(--spacing-0)
+    }
+
+  body {
+    background-repeat: no-repeat;
+    background-image: var(--gradient-background)
+    }
+
+  html {
+    line-height: 1.5;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-size-adjust: 100%
+    }
+
+  *, *::before, *::after {
+    border-color: var(--colors-border-default);
+    border-style: solid;
+    box-sizing: border-box
+    }
+
+  *::placeholder {
+    opacity: 1;
+    color: var(--colors-fg-subtle)
+    }
 }

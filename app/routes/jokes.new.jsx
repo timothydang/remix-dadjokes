@@ -21,7 +21,7 @@ import { getUserId, requireUserId } from "~/utils/session.server";
 
 import FormInput from "~/components/formInput";
 import SubmitButton from "~/components/submitButton";
-import { JokeDisplay } from "~/components/joke";
+import { JokeDisplay } from "~/components/jokeDisplay";
 
 const formSchema = z.object({
   content: z

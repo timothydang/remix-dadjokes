@@ -6,7 +6,7 @@ import {
   useParams,
   isRouteErrorResponse,
 } from "@remix-run/react";
-import { JokeDisplay } from "~/components/joke";
+import { JokeDisplay } from "~/components/jokeDisplay";
 import { db } from "~/utils/db.server";
 import { getUserId, requireUserId } from "~/utils/session.server";
 
